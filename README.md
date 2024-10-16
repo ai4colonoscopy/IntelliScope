@@ -2,19 +2,9 @@
     <img src="./assets/project-name.jpeg"/> <br />
 </p>
 
-<!-- <a href='ai4colonoscopy.github.io'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
-<a href='https://arxiv.org'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
-<a href='https://huggingface.co/ai4colonoscopy/ColonGPT-v1'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'>
-<a href='https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'>
-<a href='https://huggingface.co'><img src='https://img.shields.io/badge/Gradio-Demo-blue'></a>
-[![YouTube](./assets/youtube.jpg)](https://www.youtube.com) -->
-
-<!-- <img align="center" src="./assets/teaser-figure.png" width="666px" /> -->
-
-
 <div align="center">
     <p align="center">
-        Paper (<a href="https://arxiv.org"><b>arXiv</b></a>) | 
+        Paper (<a href="https://arxiv.org"><b>arXiv (coming soon)</b></a>) | 
         ColonSurvey (<a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing"><b>Google Sheet</b></a>) |
         ColonINST (<a href="https://drive.google.com/drive/folders/19K18llQWCKBHi4e0txcIjKIAKouR7_ah?usp=sharing"><b>Google Drive</b></a>, <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1"><b>Huggingface</b></a>) | 
         ColonGPT (<a href="https://drive.google.com/drive/folders/1zMQDtazttfyW_oz5Utf2pbwvNVAitoRh?usp=sharing"><b>Google Drive</b></a>, <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1"><b>Huggingface</b></a>)
@@ -24,10 +14,9 @@
 
 ----
 
+<img align="right" src="./assets/teaser-figure.png" width="285px" />
 
-<img align="right" src="./assets/teaser-figure.png" width="280px" />
-
-Colonoscopy is currently one of the most sensitive screening methods for [colorectal cancer](https://en.wikipedia.org/wiki/Colorectal_cancer). Ever wonder how to make colonoscopy more intelligent? Our goal is to explore the frontiers of intelligent colonoscopy techniques and their potential impact on multimodal medical applications.
+Colonoscopy is currently one of the most sensitive screening methods for colorectal cancer (🔗 [Wikipedia](https://en.wikipedia.org/wiki/Colorectal_cancer)). Ever wonder how to make colonoscopy more intelligent? In this project, our goal is to explore the frontiers of intelligent colonoscopy techniques and their potential impact on multimodal medical applications.
 
 - **Project member.** [Ge-Peng Ji](https://scholar.google.com/citations?hl=en&authuser=1&user=oaxKYKUAAAAJ) (🇦🇺 ANU), Jingyi Liu (🇯🇵 Keio), [Peng Xu](https://scholar.google.com/citations?user=9_v4tC0AAAAJ&hl=en) (🇨🇳 THU), [Nick Barnes](https://scholar.google.com/citations?hl=en&user=yMXs1WcAAAAJ) (🇦🇺 ANU), [Fahad Shahbaz Khan](https://scholar.google.com/citations?user=zvaeYnUAAAAJ&hl=en&authuser=1) (🇦🇪 MBZUAI), [Salman Khan](https://scholar.google.com/citations?user=M59O9lkAAAAJ&hl=en&authuser=1) (🇦🇪 MBZUAI), [Deng-Ping Fan](https://scholar.google.com/citations?user=kakwJ5QAAAAJ&hl=en) (🇨🇳 NKU)
 - **Let's join our *IntelliScope* community.** We build a discussion forum for the convenice of researcher to 💬 [ask any questions](https://github.com/orgs/ai4colonoscopy/discussions/categories/any-q-a), 💬 [showcase/promote your work](https://github.com/orgs/ai4colonoscopy/discussions/categories/show-tell), 💬 [access data resources](https://github.com/orgs/ai4colonoscopy/discussions/categories/data-helpdesk), and 💬 [share research ideas](https://github.com/orgs/ai4colonoscopy/discussions/categories/ideas-collaborations). 
