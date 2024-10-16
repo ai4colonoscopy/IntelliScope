@@ -4,10 +4,10 @@
 
 <div align="center">
     <p align="center">
-        Paper (<a href="https://arxiv.org"><b>arXiv (coming soon)</b></a>) | 
-        ColonSurvey (<a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing"><b>Google Sheet</b></a>) |
-        ColonINST (<a href="https://drive.google.com/drive/folders/19K18llQWCKBHi4e0txcIjKIAKouR7_ah?usp=sharing"><b>Google Drive</b></a>, <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1"><b>Huggingface</b></a>) | 
-        ColonGPT (<a href="https://drive.google.com/drive/folders/1zMQDtazttfyW_oz5Utf2pbwvNVAitoRh?usp=sharing"><b>Google Drive</b></a>, <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1"><b>Huggingface</b></a>)
+        🔬 Paper (<a href="https://arxiv.org"><b>arXiv (coming soon)</b></a>) | 
+        📖 ColonSurvey (<a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing"><b>Google Sheet</b></a>) |
+        🏥 ColonINST (<a href="https://drive.google.com/drive/folders/19K18llQWCKBHi4e0txcIjKIAKouR7_ah?usp=sharing"><b>Google Drive</b></a>, <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1"><b>Huggingface</b></a>) | 
+        🤖 ColonGPT (<a href="https://drive.google.com/drive/folders/1zMQDtazttfyW_oz5Utf2pbwvNVAitoRh?usp=sharing"><b>Google Drive</b></a>, <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1"><b>Huggingface</b></a>)
     </p>
 </div>
 
@@ -16,10 +16,12 @@
 
 <img align="right" src="./assets/teaser-figure.png" width="285px" />
 
-Colonoscopy is currently one of the most sensitive screening methods for colorectal cancer (🔗 [Wikipedia](https://en.wikipedia.org/wiki/Colorectal_cancer)). Ever wonder how to make colonoscopy more intelligent? In this project, our goal is to explore the frontiers of intelligent colonoscopy techniques and their potential impact on multimodal medical applications.
+Colonoscopy is currently one of the most sensitive screening methods for colorectal cancer (🔗 [Wikipedia](https://en.wikipedia.org/wiki/Colorectal_cancer)). Ever wonder how to make colonoscopy more intelligent? Well, buckle up, because we're diving into the exciting world of intelligent colonoscopy!
 
+- **Our vision.** Exploring the frontiers of intelligent colonoscopy techniques and their potential impact on multimodal medical applications.
+- **Why use IntelliScope?** It combines "**Intelli**gent" and "colono**Scope**," signifying a smart, AI-powered colonoscopy system. "Intelli" reflects the intelligent processing and decision-making capabilities of the system, while "Scope" refers to the colonoscope device used in medical endoscopy. Together, it implies a cutting-edge system designed to enhance colonoscopy with advanced AI technologies.
 - **Project member.** [Ge-Peng Ji](https://scholar.google.com/citations?hl=en&authuser=1&user=oaxKYKUAAAAJ) (🇦🇺 ANU), Jingyi Liu (🇯🇵 Keio), [Peng Xu](https://scholar.google.com/citations?user=9_v4tC0AAAAJ&hl=en) (🇨🇳 THU), [Nick Barnes](https://scholar.google.com/citations?hl=en&user=yMXs1WcAAAAJ) (🇦🇺 ANU), [Fahad Shahbaz Khan](https://scholar.google.com/citations?user=zvaeYnUAAAAJ&hl=en&authuser=1) (🇦🇪 MBZUAI), [Salman Khan](https://scholar.google.com/citations?user=M59O9lkAAAAJ&hl=en&authuser=1) (🇦🇪 MBZUAI), [Deng-Ping Fan](https://scholar.google.com/citations?user=kakwJ5QAAAAJ&hl=en) (🇨🇳 NKU)
-- **Let's join our *IntelliScope* community.** We build a discussion forum for the convenice of researcher to 💬 [ask any questions](https://github.com/orgs/ai4colonoscopy/discussions/categories/any-q-a), 💬 [showcase/promote your work](https://github.com/orgs/ai4colonoscopy/discussions/categories/show-tell), 💬 [access data resources](https://github.com/orgs/ai4colonoscopy/discussions/categories/data-helpdesk), and 💬 [share research ideas](https://github.com/orgs/ai4colonoscopy/discussions/categories/ideas-collaborations). 
+- **Let's join our IntelliScope community.** We build a discussion forum for the convenice of researcher to 💬 [ask any questions](https://github.com/orgs/ai4colonoscopy/discussions/categories/any-q-a), 💬 [showcase/promote your work](https://github.com/orgs/ai4colonoscopy/discussions/categories/show-tell), 💬 [access data resources](https://github.com/orgs/ai4colonoscopy/discussions/categories/data-helpdesk), and 💬 [share research ideas](https://github.com/orgs/ai4colonoscopy/discussions/categories/ideas-collaborations). 
 - **Quick view.** Next, we showcase a gradio demo of the proposed colonoscopy-specific AI chatbot, which is a pioneering multimodal language model in the community. This model can help endoscopists execute various user-driven tasks through interactive dialogues.
    <p align="center">
       <img src="./assets/web_ui.gif"/> <br />
