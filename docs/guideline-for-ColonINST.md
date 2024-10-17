@@ -60,7 +60,7 @@ The images in ColonINST were sourced from 19 public datasets, and due to strict 
 
 - **Reorganizing Dataset Files for ColonINST** After downloading the above files, you will notice a different file structure compared to our ColonINST. To reconcile these differences, you need to re-organize the files to match the structure required for ColonINST. 
 1. First put the `train/val/test` files downloaded from `ai4colonoscopy/ColonINST-v1` into `cache/data/ColonINST/Json-file`, and then put all the downloaded datasets into `cache/data/ori_dataset_download`.
-2. Next, combine the files in the original dataset into a structure suitable for ColonINST, as shown below. This step can be achieved by running 👨‍💻 `script/prepare_data/data_reorganize.sh`.
+2. Next, combine the files in the original dataset into a structure suitable for ColonINST, as shown below. This step can be achieved by running 👨‍💻 `bash script/prepare_data/data_reorganize.slurm`.
 
     ```text
     ├──cache
