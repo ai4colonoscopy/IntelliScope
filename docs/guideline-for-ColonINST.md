@@ -336,10 +336,7 @@ The following table shows the data statistics of colonoscopy images designated f
 
 #### 2️⃣ Medical captions
 
-        TODO - show more cases here!
-
-We feed a custom prompt and a hierarchical category prior to the advanced chatbot, GPT-4V. This model can generate detailed, professional medical descriptions for colonoscopy images, enhancing diagnostic clarity and specificity. In the following sections, I will detail the image-instruction pairs used for the training, validation, and test by task purposes. 
-
+We feed a custom prompt and a hierarchical category prior to the advanced chatbot, GPT-4V. This model can generate detailed, professional medical descriptions for colonoscopy images, enhancing diagnostic clarity and specificity. In the following sections, we will detail the image-instruction pairs used for the training, validation, and test by task purposes. 
 
 #### 3️⃣ Instruction tuning pairs
 
