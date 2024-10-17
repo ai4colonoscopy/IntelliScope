@@ -5,7 +5,7 @@
 <div align="center">
     <p align="center">
         🔬 <b>Paper</b> (🔗 <a href="https://arxiv.org">arXiv (coming soon)</a>) | 
-        📖 <b>ColonSurvey</b> (🔗 <a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing">Google Sheet</a>) |
+        📖 <b>ColonSurvey</b> (🔗 <a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing">Online Sheet</a>) |
         🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/19K18llQWCKBHi4e0txcIjKIAKouR7_ah?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>) | 
         🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=drive_link">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1">Huggingface</a>)
     </p>
@@ -16,7 +16,7 @@
 
 <img align="right" src="./assets/teaser-figure.png" width="285px" />
 
-Colonoscopy is currently one of the most sensitive screening methods for colorectal cancer (🔗 [Wikipedia](https://en.wikipedia.org/wiki/Colorectal_cancer)). Have you ever wondered how to make colonoscopy smarter? Well, buckle up, because we're about to enter the exciting world of intelligent colonoscopy!
+Colonoscopy is currently one of the most sensitive screening methods for colorectal cancer (🔗 [Wikipedia](https://en.wikipedia.org/wiki/Colorectal_cancer)). Have you ever wondered how to make colonoscopy smarter? Well, buckle up, let's enter the exciting world of intelligent colonoscopy!
 
 - **Our vision.** To explore the frontiers of intelligent colonoscopy techniques and their potential impact on multimodal medical applications.
 - **Why use IntelliScope?** It combines "**Intelli**gent" and "colono**Scope**," signifying a smart, AI-powered colonoscopy system. "Intelli" reflects the intelligent processing and decision-making capabilities of the system, while "Scope" refers to the colonoscope device used in medical endoscopy. Together, they imply a cutting-edge multimodal system designed to improve colonoscopy with advanced AI technologies.
