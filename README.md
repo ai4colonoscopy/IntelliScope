@@ -19,7 +19,7 @@
 Colonoscopy is currently one of the most sensitive screening methods for colorectal cancer (🔗 [Wikipedia](https://en.wikipedia.org/wiki/Colorectal_cancer)). Have you ever wondered how to make colonoscopy smarter? Well, buckle up, let's enter the exciting world of intelligent colonoscopy!
 
 - **Our vision.** To explore the frontiers of intelligent colonoscopy techniques and their potential impact on multimodal medical applications.
-- **Why use IntelliScope?** It combines "**Intelli**gent" and "colono**Scope**," signifying a smart, AI-powered colonoscopy system. "Intelli" reflects the intelligent processing and decision-making capabilities of the system, while "Scope" refers to the colonoscope device used in medical endoscopy. Together, they imply a cutting-edge multimodal system designed to improve colonoscopy with advanced AI technologies.
+- **Why use IntelliScope?** It combines "**Intelli**gent" and "colono**Scope**", where "Intelli" reflects the intelligent processing and decision-making capabilities of the system, and "Scope" refers to the colonoscope device used in medical endoscopy. Together, they imply a cutting-edge multimodal system designed to improve colonoscopy with advanced AI technologies.
 - **Project members.** [Ge-Peng Ji](https://scholar.google.com/citations?hl=en&authuser=1&user=oaxKYKUAAAAJ) (🇦🇺 ANU), Jingyi Liu (🇯🇵 Keio), [Peng Xu](https://scholar.google.com/citations?user=9_v4tC0AAAAJ&hl=en) (🇨🇳 THU), [Nick Barnes](https://scholar.google.com/citations?hl=en&user=yMXs1WcAAAAJ) (🇦🇺 ANU), [Fahad Shahbaz Khan](https://scholar.google.com/citations?user=zvaeYnUAAAAJ&hl=en&authuser=1) (🇦🇪 MBZUAI), [Salman Khan](https://scholar.google.com/citations?user=M59O9lkAAAAJ&hl=en&authuser=1) (🇦🇪 MBZUAI), [Deng-Ping Fan](https://scholar.google.com/citations?user=kakwJ5QAAAAJ&hl=en) (🇨🇳 NKU)
 - **Let's join our IntelliScope community.** We are building a discussion forum for the convenience of researchers to 💬 [ask any questions](https://github.com/orgs/ai4colonoscopy/discussions/categories/any-q-a), 💬 [showcase/promote your work](https://github.com/orgs/ai4colonoscopy/discussions/categories/show-tell), 💬 [access data resources](https://github.com/orgs/ai4colonoscopy/discussions/categories/data-helpdesk), and 💬 [share research ideas](https://github.com/orgs/ai4colonoscopy/discussions/categories/ideas-collaborations). 
 - **Quick view.** Next, we present some features of our colonoscopy-specific AI chatbot, ColonGPT. This is a domain-pioneering multimodal language model that can help endoscopists perform various user-driven tasks through interactive dialogues.
@@ -28,7 +28,8 @@ Colonoscopy is currently one of the most sensitive screening methods for colorec
    </p>
 
 ## Updates
-- *[Oct/16/2024]* Project release
+
+- *[Oct/16/2024]* Open-sourcing the entire codebase: dataset/train/infer/eval.
 
 ## 🔥 Research Highlights
 
@@ -207,12 +208,12 @@ We provide a comprehensive benchmark of eight latest multimodal competitors acro
 
 We gratefully acknowledge the contributions of the following projects, which served as the foundation and inspiration for our work: 
 
-+ [LAVIS](https://github.com/salesforce/LAVIS): A Library for Language-Vision Intelligence
 + [Bunny](https://github.com/BAAI-DCAI/Bunny): A family of lightweight multimodal models
++ [LAVIS](https://github.com/salesforce/LAVIS): A Library for Language-Vision Intelligence
 + [LLaVA](https://github.com/haotian-liu/LLaVA): Large Language and Vision Assistant
 
 
-## 👍 Citation
+## 👍 Citation (coming soon)
 
 Please use the following reference if you find this project useful for your research or applications:
 
