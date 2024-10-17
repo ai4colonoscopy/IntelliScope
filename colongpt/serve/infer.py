@@ -70,11 +70,11 @@ def main(args):
         else:
             image_tensor = image_tensor.to(model.device, dtype=model.dtype)
 
-        # 开启新对话
+        # init new conversation
         conv = conv_templates[args.conv_mode].copy()
         roles = conv.roles
 
-        # 使用human 的 value 作为 prompt
+        # use human `value` as prompt
         conv.append_message(conv.roles[0], conversations[0]['value'])
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()

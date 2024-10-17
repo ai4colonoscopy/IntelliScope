@@ -32,6 +32,13 @@ Colonoscopy is currently one of the most sensitive screening methods for colorec
 
 ## 🔥 Research Highlights
 
+<p align="center">
+    <img src="./assets/overview_for_github.png"  width="800px" /> <br/>
+    <em> 
+    Figure 1: Introductary diagram.
+    </em>
+</p>
+
 - <u>Survey on colonoscopic scene perception (CSP)</u> ➡️ ***"We assess the current landscape to sort out domain challenges and under-researched areas in the AI era."***
    - 📖 **ColonSurvey.** We investigate the latest research progress in four colonoscopic scene perception tasks from both data-centric and model-centric perspectives. Our investigation summarises key features of 63 datasets and 137 representative deep techniques published since 2015. In addition, we highlight emerging trends and opportunities for future study. (🔗 [Hyperlink](https://github.com/ai4colonoscopy/IntelliScope?tab=readme-ov-file#-colonsurvey)) 
 - 💥 <u>Multimodal AI Initiatives</u> ➡️ ***"We advocate three initiatives to embrace the coming multimodal era in colonoscopy."***
@@ -47,7 +54,7 @@ Our *"ColonSurvey"* project contributes various useful resources for the communi
 <p align="center">
     <img src="./assets/colonsurvey.png"/> <br />
     <em> 
-    Figure 1: The investigation of colonoscopy datasets and models.
+    Figure 2: The investigation of colonoscopy datasets and models.
     </em>
 </p>
 
@@ -78,7 +85,7 @@ Our investigation includes the latest intelligent colonoscopy techniques across 
 <p align="center">
     <img src="./assets/coloninst-overview.png"/> <br />
     <em> 
-    Figure 2: Details of our multimodal instruction tuning dataset, ColonINST. (a) Three sequential steps to create the instruction tuning dataset for multimodal research. (b) Numbers of colonoscopy images designated for training, validation, and testing purposes. (c) Data taxonomy of three-level categories. (d) A word cloud of the category distribution by name size. (e) Caption generation pipeline using the VL prompting mode of GPT-4V. (f) Numbers of human-machine dialogues created for four downstream tasks.
+    Figure 3: Details of our multimodal instruction tuning dataset, ColonINST. (a) Three sequential steps to create the instruction tuning dataset for multimodal research. (b) Numbers of colonoscopy images designated for training, validation, and testing purposes. (c) Data taxonomy of three-level categories. (d) A word cloud of the category distribution by name size. (e) Caption generation pipeline using the VL prompting mode of GPT-4V. (f) Numbers of human-machine dialogues created for four downstream tasks.
     </em>
 </p>
 
@@ -90,7 +97,7 @@ Our data contains two parts: colonoscopy images and human-machine dialogues (ava
 <p align="center">
     <img src="./assets/ColonGPT.gif" width="666px"/> <br /> 
     <em> 
-    Figure 3: Details of our multimodal language model, ColonGPT.
+    Figure 4: Details of our multimodal language model, ColonGPT.
     </em>
 </p>
 
