@@ -1,0 +1,1 @@
+Please follow the instructions from [docs/guideline-for-ColonINST.md](https://github.com/ai4colonoscopy/ColonGPT-tmp/blob/main/docs/guideline-for-ColonINST.md#dataset-access-for-coloninst) to organise tuning pairs in into the `./cache/data/ColonINST` folder.

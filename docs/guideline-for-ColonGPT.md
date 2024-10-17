@@ -12,16 +12,18 @@
 
 ## Contents
 
-* [😸 Quick start](#-quick-start)
-* [🏁 Installation guide](#-installation-guide)
-* [🚅 Training](#-training)
-* [💭 Inference instructions](#-inference-instructions)
-    - [1️⃣ Batch Inference](#1-batch-inference)
-    - [2️⃣ CLI Inference](#2-cli-inference)
-    - [3️⃣ Gradio Web UI](#3-gradio-web-ui)
-* [💯 Multimodal benchmark](#-multimodal-benchmark)
-    - [1️⃣ How to evaluate ColonGPT?](#1-how-to-evaluate-colongpt)
-    - [2️⃣ Multimodal benchmark](#2-multimodal-benchmark)
+- [Guidelines for ColonGPT](#guidelines-for-colongpt)
+  - [Contents](#contents)
+  - [😸 Quick start](#-quick-start)
+  - [🏁 Installation guide](#-installation-guide)
+  - [🚅 Training](#-training)
+  - [💭 Inference instructions](#-inference-instructions)
+      - [1️⃣ Batch Inference](#1️⃣-batch-inference)
+      - [2️⃣ CLI Inference](#2️⃣-cli-inference)
+      - [3️⃣ Gradio Web UI](#3️⃣-gradio-web-ui)
+  - [💯 Multimodal benchmark](#-multimodal-benchmark)
+      - [1️⃣ How to evaluate ColonGPT?](#1️⃣-how-to-evaluate-colongpt)
+      - [2️⃣ Multimodal benchmark](#2️⃣-multimodal-benchmark)
 
 
 ## 😸 Quick start
@@ -152,14 +154,14 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
     - We currently support the 🔗 [google/siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) vision encoder:
     - For the language model, we currently provide a lightweight version, 🔗 [microsoft/phi-1_5](https://huggingface.co/microsoft/phi-1_5), to enable rapid proof-of-concept. More language models will be added soon, so stay tuned!
 
-- Prepare the data, for details, please refer to ColonINST[docs/guideline-for-ColonINST.md](https://github.com/ai4colonoscopy/ColonGPT-tmp/blob/main/docs/guideline-for-ColonGPT.md)
+- Prepare the data, for details, please refer to 🔗 [docs/guideline-for-ColonINST.md](./guideline-for-ColonINST.md)
 
 - Finally, please organize all files according to this file tree.
 
     ```text
     ├──Cache
         ├──checkpoints
-            ├──ColonGPT-v1-lora-ft
+            ├──ColonGPT-v1-phi1.5-siglip-lora
         ├──data
             ├──ColonINST
                 ├──Json-file
@@ -181,7 +183,7 @@ Please modify the following configurations to fit your needs:
 - Set `OUTPUT_FILE` and `OUTPUT_DIR` to the name and path of trained weight, respectively.
 - ColonGPT is trained on 4 A100 GPUs with an equivalent batch size of 128. In other circumstances, you can adjust the batch size and other parameters accordingly. Ensure the global batch size remains consistent: `global_batch_size=per_device_train_batch_size * gradient_accumulation_steps * num_gpus`.
 
-Congrats, you now can use `bash script/train/lora_finetune.slurm` to start the training:
+Congrats, you now can use `bash script/train/lora_tuning.slurm` to start the training:
 
 - The LoRA tuning script is as follows:
 
@@ -192,7 +194,7 @@ Congrats, you now can use `bash script/train/lora_finetune.slurm` to start the t
     VISION_MODEL=cache/downloaded-weights/siglip-so400m-patch14-384 # or "google/siglip-so400m-patch14-384"
     DATA_PATH=cache/data/ColonINST/Json-file/train/ColonINST-train.json
     IMAGE_FOLDER=cache/data/ColonINST/Positive-images
-    OUTPUT_FILE=ColonGPT-v1-lora-ft
+    OUTPUT_FILE=ColonGPT-v1-phi1.5-siglip-lora
     OUTPUT_DIR=cache/checkpoint/$OUTPUT_FILE
 
     deepspeed --master_port 26000 colongpt/train/train.py \
@@ -241,7 +243,7 @@ Congrats, you now can use `bash script/train/lora_finetune.slurm` to start the t
     VISION_MODEL=cache/downloaded-weights/siglip-so400m-patch14-384 # or "google/siglip-so400m-patch14-384"
     DATA_PATH=cache/data/ColonINST/Json-file/train/ColonINST-train.json
     IMAGE_FOLDER=cache/data/ColonINST/Positive-images
-    OUTPUT_FILE=ColonGPT-v1-full-ft
+    OUTPUT_FILE=ColonGPT-v1-phi1.5-siglip-full
     OUTPUT_DIR=cache/checkpoint/$OUTPUT_FILE
 
     deepspeed --master_port 26000 colongpt/train/train.py \
@@ -281,7 +283,7 @@ Congrats, you now can use `bash script/train/lora_finetune.slurm` to start the t
 
 ## 💭 Inference instructions
 
-We provide three ways to infer ColonINST on different conversational tasks, ie, [batch inference](https://github.com/ai4colonoscopy/ColonGPT-tmp/blob/main/docs/guideline-for-ColonGPT.md#1%EF%B8%8F%E2%83%A3-batch-inference), [CLI inference](https://github.com/ai4colonoscopy/ColonGPT-tmp/blob/main/docs/guideline-for-ColonGPT.md#2%EF%B8%8F%E2%83%A3-cli-inference), and [Gradio Web UI inference](https://github.com/ai4colonoscopy/ColonGPT-tmp/blob/main/docs/guideline-for-ColonGPT.md#3%EF%B8%8F%E2%83%A3-gradio-web-ui).
+We provide three ways to infer ColonINST on different conversational tasks, ie, [batch inference](./guideline-for-ColonGPT.md#1%EF%B8%8F%E2%83%A3-batch-inference), [CLI inference](./guideline-for-ColonGPT.md#2%EF%B8%8F%E2%83%A3-cli-inference), and [Gradio Web UI inference](./guideline-for-ColonGPT.md#3%EF%B8%8F%E2%83%A3-gradio-web-ui).
 
 #### 1️⃣ Batch Inference
 
@@ -295,7 +297,7 @@ We provide one-key inference code. If you use ColonINST or follow the same data 
     ```bash
     #!/bin/bash
 
-    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-lora-ft
+    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-lora
     LLM_PATH=cache/downloaded-weights/phi-1.5
     IMAGE_FOLDER=cache/data/ColonINST/Positive-images
     JSON_FILE=cache/data/ColonINST/Json-file
@@ -349,7 +351,7 @@ We provide one-key inference code. If you use ColonINST or follow the same data 
     ```bash
     #!/bin/bash
 
-    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-full-ft
+    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-full
     IMAGE_FOLDER=cache/data/ColonINST/Positive-images
     JSON_FILE=cache/data/ColonINST/Json-file
     INFER_MODE=test # or val
@@ -401,8 +403,11 @@ Chat about images using ColonGPT without the need of Gradio interface, please us
 - If you use LoRA tuning, the cli inference script is as follows:
 - Set `EXP_MODEL_ID` and `LLM_PATH`to the paths of the saved weights and language model, respectively. 
 - Set `IMAGE_FILE` to the path of the image you want to infer.
+- Run `bash script/infer_eval/infer_cli.slurm`, then enter your instruction and the result will be printed on the screen.
     ```shell
-    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-lora-ft
+    #!/bin/bash
+
+    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-lora
     LLM_PATH=cache/downloaded-weights/phi-1.5
     IMAGE_FILE=cache/examples/example1.png
 
@@ -453,7 +458,7 @@ Here are some examples of clip inference:
 - Set `EXP_MODEL_ID` and `LLM_PATH`to the paths of the saved weights and language model, respectively. 
 
    ```python
-   EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-lora-ft
+   EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-lora
    LLM_PATH=cache/downloaded-weights/phi-1.5
 
    python -m colongpt.serve.model_worker \
@@ -478,12 +483,12 @@ The launched Gradio Web UI looks like this, you can directly use the examples we
 
 We set up three basic colonoscopy tasks for quantitative comparison. For the CLS and REG tasks, we adopt the accuracy metric to assess the ratio of correctly predicted categories to the total number of predictions. For the REC task, we use the intersection over union (IoU) metric to measure the localisation precision. 
 
-To perform the evaluation, Set `EXP_MODEL_ID` the paths of the saved weights and run` script/infer_eval/eval.slurm`. The evaluation results will be appended to the prediction file. In addition, if you want to evaluate the prediction results of the validation set, update `EVAL_MODE` to `val`. Evaluation script is as follows:
+To perform the evaluation, Set `EXP_MODEL_ID` the paths of the saved weights and run `bash script/infer_eval/eval.slurm`. The evaluation results will be appended to the prediction file. In addition, if you want to evaluate the prediction results of the validation set, update `EVAL_MODE` to `val`. Evaluation script is as follows:
 
     ```bash
     #!/bin/bash
 
-    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-lora-ft
+    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-lora
     EVAL_MODE=test
 
     python eval/multimodal_evaluator.py \
