@@ -110,7 +110,7 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
 > Note: The current code has been fully tested on Linux systems with Ampere architecture GPUs (ie, RTX4090, A100, A5000, A6000). While the following steps may work on macOS and Windows, we cannot guarantee successful configuration on those platforms at this time.
 
 
-- Prepare the CUDA Docker by NVIDIA. Ensure you have [Singularity container](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) installed. Alternatively, you can use [Docker container](https://www.docker.com/get-started/) with similar steps. Our suggested versions are:
+- Prepare the CUDA Docker by NVIDIA. Ensure you have [Singularity container](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) installed. Alternatively, you can use [Docker container](https://www.docker.com/get-started/) with similar steps. Our suggested version way in server computers is:
     ```shell
     singularity pull docker://nvcr.io/nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
     ```
@@ -151,8 +151,8 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
     ```
 
 - Prepare the pretrained weights. Whether you're planning to train or perform inference, you'll need to download the following two pretrained weights: 
-    - We currently support the 🔗 [google/siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) vision encoder:
-    - For the language model, we currently provide a lightweight version, 🔗 [microsoft/phi-1_5](https://huggingface.co/microsoft/phi-1_5), to enable rapid proof-of-concept. More language models will be added soon, so stay tuned!
+    - We currently support the siglip vision encoder, which can be accessed at 🤗 [google/siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) or 🔗 [google drive](https://drive.google.com/file/d/1tSgFw7fWZchTMSmZ53Vlz774hZn-hrSU/view?usp=sharing).
+    - For the language model, we currently provide a lightweight version, 🤗 [microsoft/phi-1_5](https://huggingface.co/microsoft/phi-1_5) or 🔗 [google drive](https://drive.google.com/file/d/1GOUv6CP8bTgU_xkwOoJA8V3UtVWzcvp9/view?usp=sharing), to enable rapid proof-of-concept. More language models will be added soon, so stay tuned!
 
 - Prepare the data, for details, please refer to 🔗 [docs/guideline-for-ColonINST.md](./guideline-for-ColonINST.md)
 

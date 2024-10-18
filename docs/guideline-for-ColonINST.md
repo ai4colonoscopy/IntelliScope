@@ -56,11 +56,11 @@ The images in ColonINST were sourced from 19 public datasets, and due to strict 
     | **Total**           | -      | 74,407                  | 8,929                 | 45,284                 | 106,570                 | 17,328                | 50,483                 | 303,001 |
 
 
-- **Accessing instruction pairs of ColonINST.** Once you have successfully requested and downloaded the original images, you can download the instruction file from the 🔗 [huggingface)](https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1) or [Google drive](https://drive.google.com/drive/folders/19K18llQWCKBHi4e0txcIjKIAKouR7_ah?usp=sharing).
+- **Accessing instruction pairs of ColonINST.** Once you have successfully requested and downloaded the original images, you can download the instruction file from the 🤗 [huggingface](https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1) or 🔗 [Google drive](https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing).
 
 - **Reorganizing Dataset Files for ColonINST** After downloading the above files, you will notice a different file structure compared to our ColonINST. To reconcile these differences, you need to re-organize the files to match the structure required for ColonINST. 
 1. First put the `train/val/test` files downloaded from `ai4colonoscopy/ColonINST-v1` into `cache/data/ColonINST/Json-file`, and then put all the downloaded datasets into `cache/data/ori_dataset_download`.
-2. Next, combine the files in the original dataset into a structure suitable for ColonINST, as shown below. This step can be achieved by running 👨‍💻 `bash script/prepare_data/data_reorganize.slurm`.
+2. Next, combine the files in the original dataset into a structure suitable for ColonINST, as shown below. This step can be achieved by running `bash script/prepare_data/data_reorganize.slurm`.
 
     ```text
     ├──cache

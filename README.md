@@ -6,8 +6,8 @@
     <p align="center">
         🔬 <b>Paper</b> (🔗 <a href="https://arxiv.org">arXiv (coming soon)</a>) | 
         📖 <b>ColonSurvey</b> (🔗 <a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing">Online Sheet</a>) |
-        🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/19K18llQWCKBHi4e0txcIjKIAKouR7_ah?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>) | 
-        🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=drive_link">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1">Huggingface</a>)
+        🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>) | 
+        🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1">Huggingface</a>)
     </p>
 </div>
 
@@ -90,7 +90,7 @@ Our investigation includes the latest intelligent colonoscopy techniques across 
     </em>
 </p>
 
-Our data contains two parts: colonoscopy images and human-machine dialogues (available at 🤗 [huggingface](https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1) and 🔗 [google drive](https://drive.google.com/drive/folders/19K18llQWCKBHi4e0txcIjKIAKouR7_ah?usp=sharing)). However, due to privacy-preserving concerns, we can not directly share the origin medical images without its authorization. *DO NOT WORRY!* We prepare a data download list and an easy-to-use script to organise our ColonINST. The operation instructions are detailed in our document (🔗 [`.docs/guideline-for-ColonINST.md`](https://github.com/ai4colonoscopy/IntelliScope/blob/main/docs/guideline-for-ColonINST.md))
+Our data contains two parts: colonoscopy images and human-machine dialogues (available at 🤗 [huggingface](https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1) and 🔗 [google drive](https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing)). However, due to privacy-preserving concerns, we can not directly share the origin medical images without its authorization. *DO NOT WORRY!* We prepare a data download list and an easy-to-use script to organise our ColonINST. The operation instructions are detailed in our document (🔗 [`.docs/guideline-for-ColonINST.md`](https://github.com/ai4colonoscopy/IntelliScope/blob/main/docs/guideline-for-ColonINST.md))
 
 
 ## 🤖 ColonGPT (A colonoscopy-specific multimodal Language Model)
@@ -103,7 +103,7 @@ Our data contains two parts: colonoscopy images and human-machine dialogues (ava
 </p>
 
 
-Our ColonGPT is a standard multimodal language model, which has been released at 🤗 [huggingface](https://huggingface.co/ai4colonoscopy/ColonGPT-v1) platform. It contains four basic components: a language tokenizer, an visual encoder (🤗 [SigLIP-SO](https://huggingface.co/google/siglip-so400m-patch14-384)), a multimodal connector, and a language model (🤗 [Phi1.5](https://huggingface.co/microsoft/phi-1_5)). 
+Our ColonGPT is a standard multimodal language model, which has been released at 🔗 [google drive](https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=sharing) platform. It contains four basic components: a language tokenizer, an visual encoder (🤗 [SigLIP-SO](https://huggingface.co/google/siglip-so400m-patch14-384) or 🔗 [google drive](https://drive.google.com/file/d/1tSgFw7fWZchTMSmZ53Vlz774hZn-hrSU/view?usp=sharing)), a multimodal connector, and a language model (🤗 [Phi1.5](https://huggingface.co/microsoft/phi-1_5) or 🔗 [google drive](https://drive.google.com/file/d/1GOUv6CP8bTgU_xkwOoJA8V3UtVWzcvp9/view?usp=sharing)).
 
 #### ✅ Quick start
 
