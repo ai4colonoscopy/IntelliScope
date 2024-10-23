@@ -4,13 +4,13 @@
 
 <div align="center">
     <p align="center">
-        🔬 <b>Paper</b> (🔗 <a href="https://arxiv.org">arXiv (coming soon)</a>) | 
+        🔬 <b>Paper</b> (🔗 <a href="https://arxiv.org/abs/2410.17241">arXiv</a>) | 
         📖 <b>ColonSurvey</b> (🔗 <a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing">Online Sheet</a>) |
         🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>) | 
         🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1">Huggingface</a>)
     </p>
     <p align="center">
-        <i>Keyworks: Intelligent Colonoscopy, Multimodal Colonoscopy, Multimodal Language Model, Endoscopic Image Analysis, Abdomen</i>
+        <i>Keyworks: Intelligent Colonoscopy, Multimodal Colonoscopy Dataset, Multimodal Language Model, Vision-language Understanding, Endoscopic Image Analysis, Healthcare AI, Abdomen.</i>
     </p>
 </div>
 
@@ -221,10 +221,10 @@ We gratefully acknowledge the contributions of the following projects, which ser
 Please use the following reference if you find this project useful for your research or applications:
 
    ```
-   @article{Ji2024frontiers
+   @article{ji2024frontiers
      author = {Ji, Ge-Peng and Liu, Jingyi and Xu, Peng and Barnes, Nick and Khan, Fahad Shahbaz and Khan, Salman and Fan, Deng-Ping},
      title = {Frontiers in Intelligent Colonoscopy},
-     journal = {arXiv:xxxxxxxxxxxxx},
+     journal = {arXiv preprint arXiv:2410.17241},
      year = {2024}
    }
    ```
