@@ -216,7 +216,7 @@ We gratefully acknowledge the contributions of the following projects, which ser
 + [LLaVA](https://github.com/haotian-liu/LLaVA): Large Language and Vision Assistant
 
 
-## 👍 Citation (coming soon)
+## 👍 Citation
 
 Please use the following reference if you find this project useful for your research or applications:
 
