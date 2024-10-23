@@ -9,6 +9,9 @@
         🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>) | 
         🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1">Huggingface</a>)
     </p>
+    <p align="center">
+        <i>Keyworks: Intelligent Colonoscopy, Multimodal Colonoscopy, Multimodal Language Model, Endoscopic Image Analysis, Abdomen</i>
+    </p>
 </div>
 
 
