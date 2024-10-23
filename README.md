@@ -112,7 +112,7 @@ Our ColonGPT is a standard multimodal language model, which has been released at
 
 We show a code snippet to show you how to quickly try-on our ColonGPT model with HuggingFace transformers quickly. For convenience, we manually combined some configuration and code files and merged the weights. Please note that this is a quick code, we recommend you installing ColonGPT's source code to explore more.
 
-- Before running the snippet, you only need to install the following minimium dependencies.
+- Before running the snippet, you only need to install the following minimum dependencies.
     ```shell
     conda create -n quickstart python=3.10
     conda activate quickstart
