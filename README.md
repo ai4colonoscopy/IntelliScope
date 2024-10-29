@@ -7,7 +7,8 @@
         🔬 <b>Paper</b> (🔗 <a href="https://arxiv.org/abs/2410.17241">arXiv</a>, 🤗 <a href="https://huggingface.co/papers/2410.17241">Huggingface</a>, 🤖 <a href="https://www.aimodels.fyi/papers/arxiv/frontiers-intelligent-colonoscopy">AIModels.fyi</a>  | 
         📖 <b>ColonSurvey</b> (🔗 <a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing">Online Sheet</a>) |
         🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>) | 
-        🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1">Huggingface</a>)
+        🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1">Huggingface</a>) |
+        🏇 <b>Multimodal benchmark</b> (🔗 <a href="https://drive.google.com/drive/folders/1q3awr-aT50tuhW9Z01C3LKkckfG4Bk70?usp=sharing">Google Drive</a>, 🔗 <a href="https://paperswithcode.com/dataset/coloninst-v1">PaperWithCode</a>)
     </p>
     <p align="center">
         <i>Keyworks: Intelligent Colonoscopy, Multimodal Colonoscopy Dataset, Multimodal Language Model, Vision-language Understanding, Endoscopic Image Analysis, Healthcare AI, Abdomen.</i>
@@ -16,13 +17,6 @@
 
 
 ----
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/image-classification-on-coloninst-v1-seen)](https://paperswithcode.com/sota/image-classification-on-coloninst-v1-seen?p=frontiers-in-intelligent-colonoscopy)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/referring-expression-generation-on-coloninst)](https://paperswithcode.com/sota/referring-expression-generation-on-coloninst?p=frontiers-in-intelligent-colonoscopy)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/referring-expression-comprehension-on-3)](https://paperswithcode.com/sota/referring-expression-comprehension-on-3?p=frontiers-in-intelligent-colonoscopy)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/image-classification-on-coloninst-v1-unseen)](https://paperswithcode.com/sota/image-classification-on-coloninst-v1-unseen?p=frontiers-in-intelligent-colonoscopy)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/referring-expression-generation-on-coloninst-1)](https://paperswithcode.com/sota/referring-expression-generation-on-coloninst-1?p=frontiers-in-intelligent-colonoscopy)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/referring-expression-comprehension-on-4)](https://paperswithcode.com/sota/referring-expression-comprehension-on-4?p=frontiers-in-intelligent-colonoscopy)
 
 <img align="right" src="./assets/teaser-figure.png" width="285px" />
 
@@ -39,8 +33,8 @@ Colonoscopy is currently one of the most sensitive screening methods for colorec
 
 ## Updates
 
-- *[Oct/16/2024]* Open-sourcing the entire codebase: dataset/train/infer/eval.
-
+- *[Oct/30/2024]* We've set up an online benchmark on the [paper-with-code](https://paperswithcode.com/dataset/coloninst-v1) website.
+- *[Oct/16/2024]* Open-source the whole codebase of project.
 ## 🔥 Research Highlights
 
 <p align="center">
