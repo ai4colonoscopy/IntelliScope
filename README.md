@@ -17,6 +17,13 @@
 
 ----
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/image-classification-on-coloninst-v1-seen)](https://paperswithcode.com/sota/image-classification-on-coloninst-v1-seen?p=frontiers-in-intelligent-colonoscopy)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/referring-expression-generation-on-coloninst)](https://paperswithcode.com/sota/referring-expression-generation-on-coloninst?p=frontiers-in-intelligent-colonoscopy)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/referring-expression-comprehension-on-3)](https://paperswithcode.com/sota/referring-expression-comprehension-on-3?p=frontiers-in-intelligent-colonoscopy)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/image-classification-on-coloninst-v1-unseen)](https://paperswithcode.com/sota/image-classification-on-coloninst-v1-unseen?p=frontiers-in-intelligent-colonoscopy)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/referring-expression-generation-on-coloninst-1)](https://paperswithcode.com/sota/referring-expression-generation-on-coloninst-1?p=frontiers-in-intelligent-colonoscopy)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frontiers-in-intelligent-colonoscopy/referring-expression-comprehension-on-4)](https://paperswithcode.com/sota/referring-expression-comprehension-on-4?p=frontiers-in-intelligent-colonoscopy)
+
 <img align="right" src="./assets/teaser-figure.png" width="285px" />
 
 Colonoscopy is currently one of the most sensitive screening methods for colorectal cancer (🔗 [Wikipedia](https://en.wikipedia.org/wiki/Colorectal_cancer)). Have you ever wondered how to make colonoscopy smarter? Well, buckle up, let's enter the exciting world of intelligent colonoscopy!
