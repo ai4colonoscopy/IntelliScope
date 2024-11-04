@@ -204,9 +204,8 @@ The complete workflow scheme has been officially released, providing a streamlin
 </p>
 
 
-We provide a comprehensive benchmark of eight latest multimodal competitors across three multimodal colonoscopy tasks, including [MiniGPT-V2](https://github.com/Vision-CAIR/MiniGPT-4), [LLaVA-v1](https://github.com/haotian-liu/LLaVA), [LLaVA-v1.5](https://github.com/haotian-liu/LLaVA), [Bunny-v1.0-3B](https://github.com/BAAI-DCAI/Bunny), [Mini-Gemini-2B](https://github.com/dvlab-research/MGM), [MGM-2B](https://github.com/dvlab-research/MGM), [MobileVLM-1.7B](https://github.com/Meituan-AutoML/MobileVLM), [LLaVA-Med-v1.0](https://github.com/microsoft/LLaVA-Med/tree/v1.0.0), and [LLaVA-Med-v1.5](https://github.com/microsoft/LLaVA-Med). We provide 🔗 [the meta prediction files](https://drive.google.com/drive/folders/1q3awr-aT50tuhW9Z01C3LKkckfG4Bk70?usp=sharing), 🔗 [the evaluation instructions](./eval/multimodal_evaluator.py). We believe these resources facilitate everyone to conveniently access their newly developed model, or rapidly conduct proof-of-concept development for follow-up research.
+We provide a comprehensive benchmark of eight latest multimodal competitors across three multimodal colonoscopy tasks, including [MiniGPT-V2](https://github.com/Vision-CAIR/MiniGPT-4), [LLaVA-v1](https://github.com/haotian-liu/LLaVA), [LLaVA-v1.5](https://github.com/haotian-liu/LLaVA), [Bunny-v1.0-3B](https://github.com/BAAI-DCAI/Bunny), [Mini-Gemini-2B](https://github.com/dvlab-research/MGM), [MobileVLM-1.7B](https://github.com/Meituan-AutoML/MobileVLM), and [LLaVA-Med-v1.0](https://github.com/microsoft/LLaVA-Med/tree/v1.0.0), and [LLaVA-Med-v1.5](https://github.com/microsoft/LLaVA-Med). We provide 🔗 [the meta prediction files](https://drive.google.com/drive/folders/1q3awr-aT50tuhW9Z01C3LKkckfG4Bk70?usp=sharing), 🔗 [the evaluation instructions](./eval/multimodal_evaluator.py). We believe these resources facilitate everyone to conveniently access their newly developed model, or rapidly conduct proof-of-concept development for follow-up research.
 
-<!-- , 🔗 the benchmark platform -->
 
 ## 🙏 Acknowledgement
 
