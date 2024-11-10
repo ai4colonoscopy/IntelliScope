@@ -221,7 +221,7 @@ We gratefully acknowledge the contributions of the following projects, which ser
 Please use the following reference if you find this project useful for your research or applications:
 
    ```
-   @article{ji2024frontiers
+   @article{ji2024frontiers,
      author = {Ji, Ge-Peng and Liu, Jingyi and Xu, Peng and Barnes, Nick and Khan, Fahad Shahbaz and Khan, Salman and Fan, Deng-Ping},
      title = {Frontiers in Intelligent Colonoscopy},
      journal = {arXiv preprint arXiv:2410.17241},
