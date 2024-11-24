@@ -33,7 +33,7 @@ Colonoscopy is currently one of the most sensitive screening methods for colorec
 
 ## Updates
 
-- *[Nov/20/2024]* We are planning to release a series of multimodal chatbots with different LLMs. Watch our project and stay tuned!
+- *[Nov/20/2024]* We are working to a series of colonoscopy-specific multimodal chatbots with different lightweight LLM-brains. Watch our project and stay tuned!
 - *[Oct/30/2024]* We've set up an online benchmark on the [paper-with-code](https://paperswithcode.com/dataset/coloninst-v1) website.
 - *[Oct/16/2024]* Open-source the whole codebase of project.
 ## 🔥 Research Highlights
