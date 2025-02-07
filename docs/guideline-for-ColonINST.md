@@ -67,7 +67,8 @@ The images in ColonINST were sourced from 19 public datasets, and due to strict 
         ├──ColonINST
             ├──Json-file
                 ├──train
-                    ├──ColonINST-train.json
+                    ├──ColonINST-train-cap.json
+                    ├──ColonINST-train-3tasks.json
                 ├──val
                     ├──ColonINST-val-cls.json
                     |...

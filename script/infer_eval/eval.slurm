@@ -1,6 +1,6 @@
 #!/bin/bash
 
-EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-lora
+EXP_MODEL_ID=cache/checkpoint/ColonGPT-phi1.5-siglip-lora-stg2
 EVAL_MODE=test # or val
 
 python script/multimodal_benchmark/multimodal_evaluator.py \

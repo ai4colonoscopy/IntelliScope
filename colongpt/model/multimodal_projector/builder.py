@@ -43,8 +43,10 @@ class PPC(nn.Module):
         spatial_tokens_list = []
         for i, pool_layer in enumerate(self.pyramid_pool_layers):  
             pooled = pool_layer(spatial_tokens)  # [16, 2048, 14, 14] [16, 2048, 7, 7] [16, 2048, 1, 1]
+            # print(f"[DEBUG] Pooled shape at level {i}: {pooled.shape}")
             if i < len(self.pyramid_pool_layers) - 1:
                 pooled = self.conv(pooled)
+                # print(f"[DEBUG] Applied convolution at level {i}")
             pooled = pooled.flatten(2).transpose(1, 2)  # [16, 196, 2048] [16, 49, 2048] [16, 1, 2048]
             spatial_tokens_list.append(pooled)
         concat_tokens = torch.cat(spatial_tokens_list, dim=1)  # [16, 246, 2048]

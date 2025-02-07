@@ -181,8 +181,19 @@ conv_colongpt = Conversation(
 
 
 default_conversation = conv_colongpt
+
+conv_plain = Conversation(
+    system="",
+    roles=("", ""),
+    messages=(
+    ),
+    offset=0,
+    sep_style=SeparatorStyle.PLAIN,
+    sep="\n",
+)
 conv_templates = {
     "default": conv_colongpt,
+    "plain": conv_plain,
     "colongpt": conv_colongpt,
 }
 

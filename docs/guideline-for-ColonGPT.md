@@ -17,6 +17,8 @@
   - [😸 Quick start](#-quick-start)
   - [🏁 Installation guide](#-installation-guide)
   - [🚅 Training](#-training)
+      - [1️⃣ STEP-I: Pre-alignment stage](#step-i-pre-alignment-stage)
+      - [1️⃣ STEP-II: Supervised fine-tuning stage](#step-ii-supervised-fine-tuning-stage)
   - [💭 Inference instructions](#-inference-instructions)
       - [1️⃣ Batch Inference](#1️⃣-batch-inference)
       - [2️⃣ CLI Inference](#2️⃣-cli-inference)
@@ -51,7 +53,7 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
     device = 'cuda'  # or cpu
     torch.set_default_device(device)
 
-    model_name = "ai4colonoscopy/ColonGPT-v1"
+    model_name = "ai4colonoscopy/ColonGPT"
 
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
@@ -118,8 +120,8 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
 - Create a Conda environment within the Docker and activate it. Please modify `-B /usr/bin/git:/usr/bin/git` if needed.
     ```shell
     conda create -n colongpt python=3.10
-    singularity run -B /usr/bin/git:/usr/bin/git --nv cuda_11.8.0-cudnn8-devel-ubuntu20.04.sif
     conda activate colongpt
+    singularity run -B /usr/bin/git:/usr/bin/git --nv ./cache/cuda_11.8.0-cudnn8-devel-ubuntu20.04.sif
     ```
 
 - Upgrade pip and install basic libraries:
@@ -135,6 +137,9 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
     git clone https://github.com/NVIDIA/apex
     cd apex
     pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+    # if you get problem with something with "" and "Killed" 
+    # reference: https://github.com/NVIDIA/apex/issues/1415#issuecomment-2082867374
+    MAX_JOBS=1 NVCC_APPEND_FLAGS='--threads 1' pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
     ```
 
 - Install [Dao-AILab/flash-attention](https://github.com/Dao-AILab/flash-attention), which provide a fast and memory-efficient exact attention for optimised training. From a [notice](https://github.com/Dao-AILab/flash-attention?tab=readme-ov-file#nvidia-cuda-support) from flash-attention, we currently only support the Ampere, Ada, or Hopper architecture GPUs (e.g., A100, RTX 3090, RTX 4090, H100). For the Turing GPUs (T4, RTX 2080) is coming soon, please use FlashAttention 1.x for Turing GPUs for now.
@@ -156,12 +161,13 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
 
 - Prepare the data, for details, please refer to 🔗 [docs/guideline-for-ColonINST.md](./guideline-for-ColonINST.md)
 
-- Finally, please organize all files according to this file tree.
+- Finally, please organize all files according to the following file tree.
 
     ```text
-    ├──Cache
+    ├──cache
         ├──checkpoints
-            ├──ColonGPT-v1-phi1.5-siglip-lora
+            ├──ColonGPT-phi1.5-siglip-stg1
+            ├──ColonGPT-phi1.5-siglip-lora-stg2
         ├──data
             ├──ColonINST
                 ├──Json-file
@@ -182,23 +188,25 @@ Please modify the following configurations to fit your needs:
 - Set `DATA_PATH` and `IMAGE_FOLDER` to the paths of `ColonInst-train.json` and `ColonINST/Positive-images`, respectively.
 - Set `OUTPUT_FILE` and `OUTPUT_DIR` to the name and path of trained weight, respectively.
 - ColonGPT is trained on 4 A100 GPUs with an equivalent batch size of 128. In other circumstances, you can adjust the batch size and other parameters accordingly. Ensure the global batch size remains consistent: `global_batch_size=per_device_train_batch_size * gradient_accumulation_steps * num_gpus`.
+- Congrats, you can now start training with `bash script/train/stage1_tuning.slurm` and `bash script/train/stage2_tuning.slurm` sequentially.:
 
-Congrats, you now can use `bash script/train/lora_tuning.slurm` to start the training:
+### STEP-I: Pre-alignment stage
 
-- The LoRA tuning script is as follows:
+- Using image-caption pairs to pre-align LLM and visual encoder. Training script is as follows:
 
     ```bash
     #!/bin/bash
     # Please change the follow configs
-    LLM_PATH=cache/downloaded-weights/phi-1.5 # or "microsoft/phi-1_5"
-    VISION_MODEL=cache/downloaded-weights/siglip-so400m-patch14-384 # or "google/siglip-so400m-patch14-384"
-    DATA_PATH=cache/data/ColonINST/Json-file/train/ColonINST-train.json
-    IMAGE_FOLDER=cache/data/ColonINST/Positive-images
-    OUTPUT_FILE=ColonGPT-v1-phi1.5-siglip-lora
+    LLM_PATH=cache/downloaded-weights/phi-1.5
+    VISION_MODEL=cache/downloaded-weights/siglip-so400m-patch14-384
+    DATA_PATH=cache/ColonINST/Json-file/train/ColonINST-train-cap.json
+    IMAGE_FOLDER=cache/ColonINST/Positive-images
+    OUTPUT_FILE=ColonGPT-phi1.5-siglip-stg1
     OUTPUT_DIR=cache/checkpoint/$OUTPUT_FILE
 
-    deepspeed --master_port 26000 colongpt/train/train.py \
-        --lora_enable True --lora_r 128 --lora_alpha 256 \
+    mkdir -p $OUTPUT_DIR
+
+    deepspeed colongpt/train/train.py \
         --deepspeed script/deepspeed_configs/zero3.json \
         --model_name_or_path $LLM_PATH \
         --model_type phi-1.5 \
@@ -209,7 +217,6 @@ Congrats, you now can use `bash script/train/lora_tuning.slurm` to start the tra
         --mm_projector_type ppc_14_7_1 \
         --tune_mm_mlp_adapter True \
         --image_aspect_ratio pad \
-        --group_by_modality_length False \
         --bf16 True \
         --output_dir $OUTPUT_DIR \
         --num_train_epochs 3 \
@@ -220,7 +227,7 @@ Congrats, you now can use `bash script/train/lora_tuning.slurm` to start the tra
         --save_strategy "steps" \
         --save_steps 3000 \
         --save_total_limit 1 \
-        --learning_rate 2e-3 \
+        --learning_rate 2e-4 \
         --weight_decay 0. \
         --warmup_ratio 0.03 \
         --lr_scheduler_type "cosine" \
@@ -232,21 +239,24 @@ Congrats, you now can use `bash script/train/lora_tuning.slurm` to start the tra
         --lazy_preprocess True \
         --report_to none | tee 2>&1 $OUTPUT_DIR/stdout-${OUTPUT_FILE}.txt
     ```
+### STEP-II: Supervised fine-tuning stage
 
-- (Optional) The full-parameter tuning script is as follows:
-
+- Adapt ColonGPT to execute three colonoscopy-specific tasks. The stage 2 tuning script is as follows:
     ```bash
     #!/bin/bash
-
     # Please change the follow configs
-    LLM_PATH=cache/downloaded-weights/phi-1.5 # or "microsoft/phi-1_5"
-    VISION_MODEL=cache/downloaded-weights/siglip-so400m-patch14-384 # or "google/siglip-so400m-patch14-384"
-    DATA_PATH=cache/data/ColonINST/Json-file/train/ColonINST-train.json
-    IMAGE_FOLDER=cache/data/ColonINST/Positive-images
-    OUTPUT_FILE=ColonGPT-v1-phi1.5-siglip-full
+    LLM_PATH=cache/downloaded-weights/phi-1.5
+    VISION_MODEL=cache/downloaded-weights/siglip-so400m-patch14-384
+    DATA_PATH=cache/ColonINST/Json-file/train/ColonINST-train-3tasks.json
+    IMAGE_FOLDER=cache/ColonINST/Positive-images
+    OUTPUT_FILE=ColonGPT-phi1.5-siglip-lora-stg2
     OUTPUT_DIR=cache/checkpoint/$OUTPUT_FILE
+    BIN=cache/checkpoint/ColonGPT-phi1.5-siglip-stg1/mm_projector.bin
 
-    deepspeed --master_port 26000 colongpt/train/train.py \
+    mkdir -p $OUTPUT_DIR
+
+    deepspeed colongpt/train/train.py \
+        --lora_enable True --lora_r 128 --lora_alpha 256 \
         --deepspeed script/deepspeed_configs/zero3.json \
         --model_name_or_path $LLM_PATH \
         --model_type phi-1.5 \
@@ -254,7 +264,9 @@ Congrats, you now can use `bash script/train/lora_tuning.slurm` to start the tra
         --data_path $DATA_PATH \
         --image_folder $IMAGE_FOLDER \
         --vision_tower $VISION_MODEL \
+        --pretrain_mm_mlp_adapter $BIN \
         --mm_projector_type ppc_14_7_1 \
+        --mm_projector_lr 2e-3 \
         --image_aspect_ratio pad \
         --group_by_modality_length False \
         --bf16 True \
@@ -267,7 +279,7 @@ Congrats, you now can use `bash script/train/lora_tuning.slurm` to start the tra
         --save_strategy "steps" \
         --save_steps 3000 \
         --save_total_limit 1 \
-        --learning_rate 2e-3 \
+        --learning_rate 2e-4 \
         --weight_decay 0. \
         --warmup_ratio 0.03 \
         --lr_scheduler_type "cosine" \
@@ -283,7 +295,7 @@ Congrats, you now can use `bash script/train/lora_tuning.slurm` to start the tra
 
 ## 💭 Inference instructions
 
-We provide three ways to infer ColonINST on different conversational tasks, ie, [batch inference](./guideline-for-ColonGPT.md#1%EF%B8%8F%E2%83%A3-batch-inference), [CLI inference](./guideline-for-ColonGPT.md#2%EF%B8%8F%E2%83%A3-cli-inference), and [Gradio Web UI inference](./guideline-for-ColonGPT.md#3%EF%B8%8F%E2%83%A3-gradio-web-ui).
+We offer you guys three ways to infer ColonINST on different conversational tasks, ie, [batch inference](./guideline-for-ColonGPT.md#1%EF%B8%8F%E2%83%A3-batch-inference), [CLI inference](./guideline-for-ColonGPT.md/#1%EF%B8%8F%E2%83%A3-batch-inference), and [Gradio Web UI inference](./guideline-for-ColonGPT.md#3%EF%B8%8F%E2%83%A3-gradio-web-ui).
 
 #### 1️⃣ Batch Inference
 
@@ -292,109 +304,72 @@ We provide one-key inference code. If you use ColonINST or follow the same data 
 - Update `IMAGE_FOLDER` and `JSON_FILE` to the paths of the `ColonINST/Positive-images` and the file to be inferred, respectively. 
 - Set `INFER_MODE` to `test` for inferring the test set, or to `val` for inferring the validation set.
 - Finally use `bash script/infer_eval/infer_lora.slurm` to start inference.
-- If you use LoRA tuning, the inference script is as follows:
+- The inference script is as follows:
 
     ```bash
     #!/bin/bash
 
-    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-lora
+    EXP_MODEL_ID=cache/checkpoint/ColonGPT-phi1.5-siglip-lora-stg2
     LLM_PATH=cache/downloaded-weights/phi-1.5
     IMAGE_FOLDER=cache/data/ColonINST/Positive-images
     JSON_FILE=cache/data/ColonINST/Json-file
+    MODEL_TYPE=phi-1.5
     INFER_MODE=test # or val
 
     mkdir -p $EXP_MODEL_ID/pred
 
-    CUDA_VISIBLE_DEVICES=0 nohup python -m colongpt.serve.infer \
+    # used for CLS task
+    nohup python -m colongpt.serve.infer \
         --model_path $EXP_MODEL_ID \
         --model_base $LLM_PATH \
-        --model_type phi-1.5 \
+        --model_type $MODEL_TYPE \
         --conv_mode colongpt \
         --image_dir $IMAGE_FOLDER \
         --json_file $JSON_FILE/${INFER_MODE}/ColonINST-${INFER_MODE}-cls.json\
         --output_path $EXP_MODEL_ID/pred/${INFER_MODE}_pred_cls.json > $EXP_MODEL_ID/pred/nohup-stdout-${INFER_MODE}-pred-cls.txt 2>&1 &
 
-
-    CUDA_VISIBLE_DEVICES=1 nohup python -m colongpt.serve.infer \
+    # used for REG task
+    nohup python -m colongpt.serve.infer \
         --model_path $EXP_MODEL_ID \
         --model_base $LLM_PATH \
-        --model_type phi-1.5 \
+        --model_type $MODEL_TYPE \
         --conv_mode colongpt \
         --image_dir $IMAGE_FOLDER \
         --json_file $JSON_FILE/${INFER_MODE}/ColonINST-${INFER_MODE}-reg.json \
         --output_path $EXP_MODEL_ID/pred/${INFER_MODE}_pred_reg.json > $EXP_MODEL_ID/pred/nohup-stdout-${INFER_MODE}-pred-reg.txt 2>&1 &
 
-
-    CUDA_VISIBLE_DEVICES=2 nohup python -m colongpt.serve.infer \
+    # used for REC task
+    nohup python -m colongpt.serve.infer \
         --model_path $EXP_MODEL_ID \
         --model_base $LLM_PATH \
-        --model_type phi-1.5 \
+        --model_type $MODEL_TYPE \
         --conv_mode colongpt \
         --image_dir $IMAGE_FOLDER \
         --json_file $JSON_FILE/${INFER_MODE}/ColonINST-${INFER_MODE}-rec.json \
         --output_path $EXP_MODEL_ID/pred/${INFER_MODE}_pred_rec.json > $EXP_MODEL_ID/pred/nohup-stdout-${INFER_MODE}-pred-rec.txt 2>&1 &
-
-
-    CUDA_VISIBLE_DEVICES=3 nohup python -m colongpt.serve.infer \
-        --max_new_tokens 512 \
-        --model_path $EXP_MODEL_ID \
-        --model_base $LLM_PATH \
-        --model_type phi-1.5 \
-        --conv_mode colongpt \
-        --image_dir $IMAGE_FOLDER \
-        --json_file $JSON_FILE/${INFER_MODE}/ColonINST-${INFER_MODE}-cap.json \
-        --output_path $EXP_MODEL_ID/pred/${INFER_MODE}_pred_cap.json > $EXP_MODEL_ID/pred/nohup-stdout-${INFER_MODE}-pred-cap.txt 2>&1 &
     ```
-
-- (Optional) If you use full-parameter tuning, the inference script `bash script/infer_eval/infer_full.slurm` is as follows:
-
+- *(Optional)* Our stage-I model can be repurposed as captionb generator to generate descriptions on the given image. Use `bash script/infer_eval/infer_cap.slurm` for inference on image captioning tasks.
     ```bash
     #!/bin/bash
 
-    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-full
+    EXP_MODEL_ID=cache/checkpoint/ColonGPT-phi1.5-siglip-stg1
+    LLM_PATH=cache/downloaded-weights/phi-1.5
     IMAGE_FOLDER=cache/data/ColonINST/Positive-images
     JSON_FILE=cache/data/ColonINST/Json-file
-    INFER_MODE=test # or val
+    INFER_MODE=test # or val test
 
     mkdir -p $EXP_MODEL_ID/pred
 
-    CUDA_VISIBLE_DEVICES=0 nohup python -m colongpt.serve.infer \
-        --model_path $EXP_MODEL_ID \
-        --model_type phi-1.5 \
-        --conv_mode colongpt \
-        --image_dir $IMAGE_FOLDER \
-        --json_file $JSON_FILE/${INFER_MODE}/ColonINST-${INFER_MODE}-cls.json \
-        --output_path $EXP_MODEL_ID/pred/${INFER_MODE}_pred_cls.json > $EXP_MODEL_ID/pred/nohup-stdout-${INFER_MODE}-pred-cls.txt 2>&1 &
-
-
-    CUDA_VISIBLE_DEVICES=1 nohup python -m colongpt.serve.infer \
-        --model_path $EXP_MODEL_ID \
-        --model_type phi-1.5 \
-        --conv_mode colongpt \
-        --image_dir $IMAGE_FOLDER \
-        --json_file $JSON_FILE/${INFER_MODE}/ColonINST-${INFER_MODE}-reg.json \
-        --output_path $EXP_MODEL_ID/pred/${INFER_MODE}_pred_reg.json > $EXP_MODEL_ID/pred/nohup-stdout-${INFER_MODE}-pred-reg.txt 2>&1 &
-
-
-    CUDA_VISIBLE_DEVICES=2 nohup python -m colongpt.serve.infer \
-        --model_path $EXP_MODEL_ID \
-        --model_type phi-1.5 \
-        --conv_mode colongpt \
-        --image_dir $IMAGE_FOLDER \
-        --json_file $JSON_FILE/${INFER_MODE}/ColonINST-${INFER_MODE}-rec.json \
-        --output_path $EXP_MODEL_ID/pred/${INFER_MODE}_pred_rec.json > $EXP_MODEL_ID/pred/nohup-stdout-${INFER_MODE}-pred-rec.txt 2>&1 &
-
-
-    CUDA_VISIBLE_DEVICES=3 nohup python -m colongpt.serve.infer \
+    nohup python -m colongpt.serve.infer \
         --max_new_tokens 512 \
         --model_path $EXP_MODEL_ID \
+        --model_base $LLM_PATH \
         --model_type phi-1.5 \
         --conv_mode colongpt \
         --image_dir $IMAGE_FOLDER \
         --json_file $JSON_FILE/${INFER_MODE}/ColonINST-${INFER_MODE}-cap.json \
         --output_path $EXP_MODEL_ID/pred/${INFER_MODE}_pred_cap.json > $EXP_MODEL_ID/pred/nohup-stdout-${INFER_MODE}-pred-cap.txt 2>&1 &
     ```
-
 
 #### 2️⃣ CLI Inference
 
@@ -407,7 +382,7 @@ Chat about images using ColonGPT without the need of Gradio interface, please us
     ```shell
     #!/bin/bash
 
-    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-lora
+    EXP_MODEL_ID=cache/checkpoint/ColonGPT-phi1.5-siglip-lora-stg2
     LLM_PATH=cache/downloaded-weights/phi-1.5
     IMAGE_FILE=cache/examples/example1.png
 
@@ -429,13 +404,29 @@ Here are some examples of clip inference:
 - Using CLI inference for referring expression generation (REG)
     ![REG-cli](../assets/cli-REG.gif)
 
-- Using CLI inference for image captioning (CAP)
-    ![CAP-cli](../assets/cli-CAP.gif)
+If you want to inference the image captioning task, run the following script:
+
+```shell
+#!/bin/bash
+
+EXP_MODEL_ID=cache/checkpoint/ColonGPT-phi1.5-siglip-stg1
+LLM_PATH=cache/downloaded-weights/phi-1.5
+IMAGE_FILE=cache/examples/example1.png
+
+python colongpt/serve/cli.py \
+    --model-path $EXP_MODEL_ID \
+    --model-base $LLM_PATH \
+    --model-type phi-1.5 \
+    --image-file $IMAGE_FILE
+```
+
+![CAP-cli](../assets/cli-CAP.gif)
 
 
 #### 3️⃣ Gradio Web UI
 
 - First, start the controller. This service orchestrates communication between the web server and model workers.
+
 
    ```python
    python -m colongpt.serve.controller \
@@ -445,8 +436,16 @@ Here are some examples of clip inference:
 
 - Then launching the gradio web server. To interact with the models through a web interface, start the Gradio web server.
 
+    If you want to perform the image captioning task (CAP), use the following code:
    ```python
-   python -m colongpt.serve.gradio_web_server \
+   python -m colongpt.serve.gradio_web_server_stg1 \
+      --controller http://localhost:10000 \
+      --model-list-mode reload \
+      --share
+   ```
+    If you want to perform the classification (CLS) task, referring expression generation (REG) task, or referring expression comprehension (REC) task, use the following code:
+   ```python
+   python -m colongpt.serve.gradio_web_server_stg2 \
       --controller http://localhost:10000 \
       --model-list-mode reload \
       --share
@@ -455,10 +454,12 @@ Here are some examples of clip inference:
 - Now, you can open the web interface with the URL printed on the screen. 
 
 - Next, launching model workers. Model workers handle the processing of model inferences. Configure each worker with the appropriate model and start it.
+
 - Set `EXP_MODEL_ID` and `LLM_PATH`to the paths of the saved weights and language model, respectively. 
 
+    For the CAP task, set EXP_MODEL_ID to "ColonGPT-phi1.5-siglip-stg1", 
    ```python
-   EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-lora
+   EXP_MODEL_ID=cache/checkpoint/ColonGPT-phi1.5-siglip-stg1
    LLM_PATH=cache/downloaded-weights/phi-1.5
 
    python -m colongpt.serve.model_worker \
@@ -471,13 +472,29 @@ Here are some examples of clip inference:
    --model-type phi-1.5
    ```
 
-The launched Gradio Web UI looks like this, you can directly use the examples we provide or upload any images you need for inference.
+    and for the other three tasks, set EXP_MODEL_ID to "ColonGPT-phi1.5-siglip-lora-stg2".
+   ```python
+   EXP_MODEL_ID=cache/checkpoint/ColonGPT-phi1.5-siglip-lora-stg2
+   LLM_PATH=cache/downloaded-weights/phi-1.5
 
-![webUi](../assets/web_ui.gif)
+   python -m colongpt.serve.model_worker \
+   --host 0.0.0.0 \
+   --controller http://localhost:10000 \
+   --port 40000 \
+   --worker http://localhost:40000 \
+   --model-path $EXP_MODEL_ID \
+   --model-base $LLM_PATH \
+   --model-type phi-1.5
+   ```
 
+- The launched Gradio Web UI looks like this, you can directly use the examples we provide or upload any images you need for inference.
+
+    ![webUi](../assets/web_ui_stg1.gif)
+
+- *(Optional)* WebUI for image captioning function:
+    ![webUi](../assets/web_ui_stg2.gif)
 
 ## 💯 Multimodal benchmark
-
 
 #### 1️⃣ How to evaluate ColonGPT?
 
@@ -488,7 +505,7 @@ To perform the evaluation, Set `EXP_MODEL_ID` the paths of the saved weights and
     ```bash
     #!/bin/bash
 
-    EXP_MODEL_ID=cache/checkpoint/ColonGPT-v1-phi1.5-siglip-lora
+    EXP_MODEL_ID=cache/checkpoint/ColonGPT-phi1.5-siglip-lora-stg2
     EVAL_MODE=test
 
     python script/multimodal_benchmark/multimodal_evaluator.py \

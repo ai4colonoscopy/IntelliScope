@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "IntelliScope"
+name = "colongpt"
 version = "1.0"
-description = "Frontiers in Intelligent Colonoscopy (IntelliScope)."
+description = "A family of lightweight multimodal models."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -21,8 +21,8 @@ dependencies = [
 
 
 [project.urls]
-"Homepage" = "https://github.com/ai4colonoscopy/IntelliScope"
-"Discussion" = "https://github.com/ai4colonoscopy/IntelliScope/issues"
+"Homepage" = "https://github.com/ai4colonoscopy/ColonGPT"
+"Discussion" = "https://github.com/ai4colonoscopy/ColonGPT/issues"
 
 [tool.setuptools.packages.find]
 exclude = ["assets*", "benchmark*", "docs", "dist*", "playground*", "scripts*", "tests*"]

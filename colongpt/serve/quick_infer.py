@@ -9,7 +9,7 @@ from colongpt.util.utils import disable_torch_init
 from colongpt.util.mm_utils import process_images, tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria
 
 
-model_path = "ai4colonoscopy/ColonGPT-v1"
+model_path = "ai4colonoscopy/ColonGPT"
 model_base = "microsoft/phi-1_5"
 model_type = "phi-1.5"
 image_file = "cache/examples/example2.png"

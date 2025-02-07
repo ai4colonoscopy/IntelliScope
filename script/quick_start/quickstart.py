@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 device = 'cuda'  # or cpu
 torch.set_default_device(device)
 
-model_name = "ai4colonoscopy/ColonGPT-v1"
+model_name = "ai4colonoscopy/ColonGPT"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_name,

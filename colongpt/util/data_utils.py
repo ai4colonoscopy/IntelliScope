@@ -305,7 +305,9 @@ class LazySupervisedDataset(Dataset):
             image_folder = self.data_args.image_folder
             processor = self.data_args.image_processor
             image = Image.open(os.path.join(image_folder, image_file)).convert('RGB')
+            # print(f"Image {i} original shape: {image.size}") # add debug
             if self.data_args.image_aspect_ratio == 'pad':
+                # print(f"Using 'pad' aspect ratio mode") # add debug
                 def expand2square(pil_img, background_color):
                     width, height = pil_img.size
                     if width == height:
@@ -320,9 +322,13 @@ class LazySupervisedDataset(Dataset):
                         return result
 
                 image = expand2square(image, tuple(int(x * 255) for x in processor.image_mean))
+                # print(f"Image {i} shape after padding: {image.size}") # add debug
                 image = processor.preprocess(image, return_tensors='pt')['pixel_values'][0]
+                # print(f"Image {i} shape after preprocessing: {image.shape}") # add debug
             else:
+                # print(f"Using aspect ratio mode: {self.data_args.image_aspect_ratio}") # add debug
                 image = processor.preprocess(image, return_tensors='pt')['pixel_values'][0]
+                # print(f"Image {i} shape after preprocessing: {image.shape}") # add debug
             sources = preprocess_multimodal(
                 copy.deepcopy([e["conversations"] for e in sources]), self.data_args)
         else:

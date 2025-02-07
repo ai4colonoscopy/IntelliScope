@@ -7,7 +7,7 @@
         🔬 <b>Paper</b> (🔗 <a href="https://arxiv.org/abs/2410.17241">arXiv</a>, 🤗 <a href="https://huggingface.co/papers/2410.17241">Huggingface</a>, 🤖 <a href="https://www.aimodels.fyi/papers/arxiv/frontiers-intelligent-colonoscopy">AIModels.fyi</a>  | 
         📖 <b>ColonSurvey</b> (🔗 <a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing">Online Sheet</a>) |
         🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>) | 
-        🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT-v1">Huggingface</a>) |
+        🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/drive/folders/1Emi7o7DpN0zlCPIYqsCfNMr9LTPt3SCT?usp=drive_link">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT">Huggingface</a>) |
         🏇 <b>Multimodal benchmark</b> (🔗 <a href="https://drive.google.com/drive/folders/1q3awr-aT50tuhW9Z01C3LKkckfG4Bk70?usp=sharing">Google Drive</a>, 🔗 <a href="https://paperswithcode.com/dataset/coloninst-v1">PaperWithCode</a>)
     </p>
     <p align="center">
@@ -27,15 +27,17 @@ Colonoscopy is currently one of the most sensitive screening methods for colorec
 - **Project members.** [Ge-Peng Ji](https://scholar.google.com/citations?hl=en&authuser=1&user=oaxKYKUAAAAJ) (🇦🇺 ANU), Jingyi Liu (🇯🇵 Keio), [Peng Xu](https://scholar.google.com/citations?user=9_v4tC0AAAAJ&hl=en) (🇨🇳 THU), [Nick Barnes](https://scholar.google.com/citations?hl=en&user=yMXs1WcAAAAJ) (🇦🇺 ANU), [Fahad Shahbaz Khan](https://scholar.google.com/citations?user=zvaeYnUAAAAJ&hl=en&authuser=1) (🇦🇪 MBZUAI), [Salman Khan](https://scholar.google.com/citations?user=M59O9lkAAAAJ&hl=en&authuser=1) (🇦🇪 MBZUAI), [Deng-Ping Fan](https://scholar.google.com/citations?user=kakwJ5QAAAAJ&hl=en) (🇨🇳 NKU)
 - **Let's join our IntelliScope community.** We are building a discussion forum for the convenience of researchers to 💬 [ask any questions](https://github.com/orgs/ai4colonoscopy/discussions/categories/any-q-a), 💬 [showcase/promote your work](https://github.com/orgs/ai4colonoscopy/discussions/categories/show-tell), 💬 [access data resources](https://github.com/orgs/ai4colonoscopy/discussions/categories/data-helpdesk), and 💬 [share research ideas](https://github.com/orgs/ai4colonoscopy/discussions/categories/ideas-collaborations). 
 - **Quick view.** Next, we present some features of our colonoscopy-specific AI chatbot, ColonGPT. This is a domain-pioneering multimodal language model that can help endoscopists perform various user-driven tasks through interactive dialogues.
-   <p align="center">
-      <img src="./assets/web_ui.gif"/> <br />
-   </p>
+
+<p align="center">
+    <img src="./assets/web_ui_stg2.gif"/> <br />
+</p>
 
 ## Updates
 
-- *[Nov/20/2024]* We are working to a series of colonoscopy-specific multimodal chatbots with different lightweight LLM-brains. Watch our project and stay tuned!
+- *[Feb/07/2025]* 🔥 We announce a new two-stage training strategy for enhancing ColonGPT's performance, achieving SOTA results on all downstream tasks. Further details are available in our [technical report (arXiv-v2)](https://arxiv.org/abs/2410.17241v2).
 - *[Oct/30/2024]* We've set up an online benchmark on the [paper-with-code](https://paperswithcode.com/dataset/coloninst-v1) website.
 - *[Oct/16/2024]* Open-source the whole codebase of project.
+
 ## 🔥 Research Highlights
 
 <p align="center">
@@ -108,7 +110,7 @@ Our data contains two parts: colonoscopy images and human-machine dialogues (ava
 </p>
 
 
-Our ColonGPT is a standard multimodal language model, which has been released at 🔗 [google drive](https://drive.google.com/file/d/1WL0OIPiwiLeApoK8xaMZ1HR30ZrDtoMk/view?usp=sharing) platform. It contains four basic components: a language tokenizer, an visual encoder (🤗 [SigLIP-SO](https://huggingface.co/google/siglip-so400m-patch14-384) or 🔗 [google drive](https://drive.google.com/file/d/1tSgFw7fWZchTMSmZ53Vlz774hZn-hrSU/view?usp=sharing)), a multimodal connector, and a language model (🤗 [Phi1.5](https://huggingface.co/microsoft/phi-1_5) or 🔗 [google drive](https://drive.google.com/file/d/1GOUv6CP8bTgU_xkwOoJA8V3UtVWzcvp9/view?usp=sharing)).
+Our ColonGPT is a standard multimodal language model, which has been released at 🔗 [google drive](https://drive.google.com/drive/folders/1Emi7o7DpN0zlCPIYqsCfNMr9LTPt3SCT?usp=drive_link) platform. It contains four basic components: a language tokenizer, an visual encoder (🤗 [SigLIP-SO](https://huggingface.co/google/siglip-so400m-patch14-384) or 🔗 [google drive](https://drive.google.com/file/d/1tSgFw7fWZchTMSmZ53Vlz774hZn-hrSU/view?usp=sharing)), a multimodal connector, and a language model (🤗 [Phi1.5](https://huggingface.co/microsoft/phi-1_5) or 🔗 [google drive](https://drive.google.com/file/d/1GOUv6CP8bTgU_xkwOoJA8V3UtVWzcvp9/view?usp=sharing)).
 
 #### ✅ Quick start
 
@@ -137,7 +139,7 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
     device = 'cuda'  # or cpu
     torch.set_default_device(device)
 
-    model_name = "ai4colonoscopy/ColonGPT-v1"
+    model_name = "ai4colonoscopy/ColonGPT"
 
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
@@ -163,7 +165,7 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
                     return True
             return False
 
-    prompt = "Describe what you see in the image." 
+    prompt = "Categorize the object."
     text = f"USER: <image>\n{prompt} ASSISTANT:"
     text_chunks = [tokenizer(chunk).input_ids for chunk in text.split('<image>')]
     input_ids = torch.tensor(text_chunks[0] + [-200] + text_chunks[1], dtype=torch.long).unsqueeze(0).to(device)
@@ -205,7 +207,7 @@ The complete workflow scheme has been officially released, providing a streamlin
 </p>
 
 
-We provide a comprehensive benchmark of eight latest multimodal competitors across three multimodal colonoscopy tasks, including [MiniGPT-V2](https://github.com/Vision-CAIR/MiniGPT-4), [LLaVA-v1](https://github.com/haotian-liu/LLaVA), [LLaVA-v1.5](https://github.com/haotian-liu/LLaVA), [Bunny-v1.0-3B](https://github.com/BAAI-DCAI/Bunny), [Mini-Gemini-2B](https://github.com/dvlab-research/MGM), [MobileVLM-1.7B](https://github.com/Meituan-AutoML/MobileVLM), and [LLaVA-Med-v1.0](https://github.com/microsoft/LLaVA-Med/tree/v1.0.0), and [LLaVA-Med-v1.5](https://github.com/microsoft/LLaVA-Med). We provide 🔗 [the meta prediction files](https://drive.google.com/drive/folders/1q3awr-aT50tuhW9Z01C3LKkckfG4Bk70?usp=sharing), 🔗 [the evaluation instructions](./eval/multimodal_evaluator.py). We believe these resources facilitate everyone to conveniently access their newly developed model, or rapidly conduct proof-of-concept development for follow-up research.
+We provide a comprehensive benchmark of eight latest multimodal competitors across three multimodal colonoscopy tasks, including [MiniGPT-V2](https://github.com/Vision-CAIR/MiniGPT-4), [LLaVA-v1](https://github.com/haotian-liu/LLaVA), [LLaVA-v1.5](https://github.com/haotian-liu/LLaVA), [Bunny-v1.0-3B](https://github.com/BAAI-DCAI/Bunny), [Mini-Gemini-2B](https://github.com/dvlab-research/MGM), [MobileVLM-1.7B](https://github.com/Meituan-AutoML/MobileVLM), and [LLaVA-Med-v1.0](https://github.com/microsoft/LLaVA-Med/tree/v1.0.0), and [LLaVA-Med-v1.5](https://github.com/microsoft/LLaVA-Med). We provide 🔗 [the meta prediction files](https://drive.google.com/drive/folders/1q3awr-aT50tuhW9Z01C3LKkckfG4Bk70?usp=sharing), 🔗 [the evaluation instructions](./script/multimodal_benchmark/multimodal_evaluator.py). We believe these resources facilitate everyone to conveniently access their newly developed model, or rapidly conduct proof-of-concept development for follow-up research.
 
 
 ## 🙏 Acknowledgement

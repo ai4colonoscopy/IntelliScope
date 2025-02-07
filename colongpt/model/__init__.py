@@ -1,1 +1,2 @@
 from .language_model.colongpt_phi import ColongptPhiForCausalLM, ColongptPhiConfig
+from .language_model.colongpt_phi3 import ColongptPhi3ForCausalLM, ColongptPhi3Config
