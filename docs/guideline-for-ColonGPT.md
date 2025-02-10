@@ -79,7 +79,7 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
                     return True
             return False
 
-    prompt = "Describe what you see in the image." 
+    prompt = "Categorize the object."
     text = f"USER: <image>\n{prompt} ASSISTANT:"
     text_chunks = [tokenizer(chunk).input_ids for chunk in text.split('<image>')]
     input_ids = torch.tensor(text_chunks[0] + [-200] + text_chunks[1], dtype=torch.long).unsqueeze(0).to(device)
@@ -109,7 +109,7 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
 
 ## 🏁 Installation guide
 
-> Note: The current code has been fully tested on Linux systems with Ampere architecture GPUs (ie, RTX4090, A100, A5000, A6000). While the following steps may work on macOS and Windows, we cannot guarantee successful configuration on those platforms at this time.
+> Note: The current code has been fully tested on Linux systems with Ampere architecture GPUs (ie, RTX4090, A100, A5000, A6000, H200). While the following steps may work on macOS and Windows, we cannot guarantee successful configuration on those platforms at this time.
 
 
 - Prepare the CUDA Docker by NVIDIA. Ensure you have [Singularity container](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) installed. Alternatively, you can use [Docker container](https://www.docker.com/get-started/) with similar steps. Our suggested version way in server computers is:
@@ -142,7 +142,7 @@ We show a code snippet to show you how to quickly try-on our ColonGPT model with
     MAX_JOBS=1 NVCC_APPEND_FLAGS='--threads 1' pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
     ```
 
-- Install [Dao-AILab/flash-attention](https://github.com/Dao-AILab/flash-attention), which provide a fast and memory-efficient exact attention for optimised training. From a [notice](https://github.com/Dao-AILab/flash-attention?tab=readme-ov-file#nvidia-cuda-support) from flash-attention, we currently only support the Ampere, Ada, or Hopper architecture GPUs (e.g., A100, RTX 3090, RTX 4090, H100). For the Turing GPUs (T4, RTX 2080) is coming soon, please use FlashAttention 1.x for Turing GPUs for now.
+- Install [Dao-AILab/flash-attention](https://github.com/Dao-AILab/flash-attention), which provide a fast and memory-efficient exact attention for optimised training. From a [notice](https://github.com/Dao-AILab/flash-attention?tab=readme-ov-file#nvidia-cuda-support) from flash-attention, we currently only support the Ampere, Ada, or Hopper architecture GPUs (e.g., A100, RTX 3090, RTX 4090, H200). For the Turing GPUs (T4, RTX 2080) is coming soon, please use FlashAttention 1.x for Turing GPUs for now.
     ```shell
     pip install packaging
     pip install flash-attn --no-build-isolation
@@ -187,7 +187,7 @@ Please modify the following configurations to fit your needs:
 - Update `LLM_PATH` and `VISION_MODEL` to the paths of the language model and vision encoder, respectively.
 - Set `DATA_PATH` and `IMAGE_FOLDER` to the paths of `ColonInst-train.json` and `ColonINST/Positive-images`, respectively.
 - Set `OUTPUT_FILE` and `OUTPUT_DIR` to the name and path of trained weight, respectively.
-- ColonGPT is trained on 4 A100 GPUs with an equivalent batch size of 128. In other circumstances, you can adjust the batch size and other parameters accordingly. Ensure the global batch size remains consistent: `global_batch_size=per_device_train_batch_size * gradient_accumulation_steps * num_gpus`.
+- ColonGPT is trained on two NVIDIA H200 GPUs with an equivalent batch size of 64. In other circumstances, you can adjust the batch size and other parameters accordingly. Ensure the global batch size remains consistent: `global_batch_size=per_device_train_batch_size * gradient_accumulation_steps * num_gpus`.
 - Congrats, you can now start training with `bash script/train/stage1_tuning.slurm` and `bash script/train/stage2_tuning.slurm` sequentially.:
 
 ### STEP-I: Pre-alignment stage

@@ -37,7 +37,7 @@ class KeywordsStoppingCriteria(StoppingCriteria):
                 return True
         return False
 
-prompt = "Describe what you see in the image." 
+prompt = "Categorize the object." 
 text = f"USER: <image>\n{prompt} ASSISTANT:"
 text_chunks = [tokenizer(chunk).input_ids for chunk in text.split('<image>')]
 input_ids = torch.tensor(text_chunks[0] + [-200] + text_chunks[1], dtype=torch.long).unsqueeze(0).to(device)
