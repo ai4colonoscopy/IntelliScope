@@ -6,8 +6,8 @@
     <p align="center">
         🔬 <b>Paper</b> (🔗 <a href="https://arxiv.org/abs/2410.17241">arXiv</a>, 🤗 <a href="https://huggingface.co/papers/2410.17241">Huggingface</a>, 🤖 <a href="https://www.aimodels.fyi/papers/arxiv/frontiers-intelligent-colonoscopy">AIModels.fyi</a>  | 
         📖 <b>ColonSurvey</b> (🔗 <a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing">Online Sheet</a>) |
-        🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>) | 
-        🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/drive/folders/1Emi7o7DpN0zlCPIYqsCfNMr9LTPt3SCT?usp=drive_link">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT">Huggingface</a>) |
+        🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>, <img src="./assets/wisemodel.png" style="width:40px"> <a href="https://wisemodel.cn/datasets/Jingyi/ColonINST">wisemodel</a>) | 
+        🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/drive/folders/1Emi7o7DpN0zlCPIYqsCfNMr9LTPt3SCT?usp=drive_link">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT">Huggingface</a>, <img src="./assets/wisemodel.png" style="width:40px"> <a href="https://wisemodel.cn/models/Jingyi/ColonGPT">wisemodel</a>) |
         🏇 <b>Multimodal benchmark</b> (🔗 <a href="https://drive.google.com/drive/folders/1q3awr-aT50tuhW9Z01C3LKkckfG4Bk70?usp=sharing">Google Drive</a>, 🔗 <a href="https://paperswithcode.com/dataset/coloninst-v1">PaperWithCode</a>)
     </p>
     <p align="center">
@@ -34,7 +34,8 @@ Colonoscopy is currently one of the most sensitive screening methods for colorec
 
 ## Updates
 
-- *[Feb/07/2025]* 🔥 We announce a new two-stage training strategy for enhancing ColonGPT's performance, achieving SOTA results on all downstream tasks. Further details are available in our [technical report (arXiv-v2)](https://arxiv.org/abs/2410.17241v2).
+- *[April/05/2025]* Our project now supports the Chinese AI platform [wisemodel](https://wisemodel.cn/codes/Jingyi/IntelliScope).
+- *[Feb/07/2025]* We announce a new two-stage training strategy for enhancing ColonGPT's performance, achieving SOTA results on all downstream tasks. Further details are available in our [technical report (arXiv-v2)](https://arxiv.org/abs/2410.17241v2).
 - *[Oct/30/2024]* We've set up an online benchmark on the [paper-with-code](https://paperswithcode.com/dataset/coloninst-v1) website.
 - *[Oct/16/2024]* Open-source the whole codebase of project.
 
