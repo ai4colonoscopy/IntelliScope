@@ -100,7 +100,7 @@ Our investigation includes the latest intelligent colonoscopy techniques across 
 
 Our data contains two parts: colonoscopy images and human-machine dialogues (available at 🤗 [huggingface](https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1) and 🔗 [google drive](https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing)). However, due to privacy-preserving concerns, we can not directly share the origin medical images without its authorization. *DO NOT WORRY!* We prepare a data download list and an easy-to-use script to organise our ColonINST. The operation instructions are detailed in our document (🔗 [`.docs/guideline-for-ColonINST.md`](https://github.com/ai4colonoscopy/IntelliScope/blob/main/docs/guideline-for-ColonINST.md))
 
-> Apply full data via google form: https://forms.gle/C3FqtnCZmo5aZLR26
+> Apply full data of the proposed ColonINST via google form: https://forms.gle/C3FqtnCZmo5aZLR26
 
 ## 🤖 ColonGPT (A colonoscopy-specific multimodal Language Model)
 
