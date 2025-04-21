@@ -225,12 +225,12 @@ We gratefully acknowledge the contributions of the following projects, which ser
 Please use the following reference if you find this project useful for your research or applications:
 
    ```
-   @article{ji2024frontiers,
-     author = {Ji, Ge-Peng and Liu, Jingyi and Xu, Peng and Barnes, Nick and Khan, Fahad Shahbaz and Khan, Salman and Fan, Deng-Ping},
-     title = {Frontiers in Intelligent Colonoscopy},
-     journal = {arXiv preprint arXiv:2410.17241},
-     year = {2024}
-   }
+    @article{ji2024frontiers,
+      title={Frontiers in intelligent colonoscopy},
+      author={Ji, Ge-Peng and Liu, Jingyi and Xu, Peng and Barnes, Nick and Khan, Fahad Shahbaz and Khan, Salman and Fan, Deng-Ping},
+      journal={arXiv preprint arXiv:2410.17241},
+      year={2024}
+    }
    ```
 
 ## 🚨 Ethical and Responsible Use
