@@ -226,11 +226,15 @@ We gratefully acknowledge the contributions of the following projects, which ser
 Please use the following reference if you find this project useful for your research or applications:
 
    ```
-    @article{ji2024frontiers,
+    @article{ji2025frontiers,
       title={Frontiers in intelligent colonoscopy},
       author={Ji, Ge-Peng and Liu, Jingyi and Xu, Peng and Barnes, Nick and Khan, Fahad Shahbaz and Khan, Salman and Fan, Deng-Ping},
-      journal={arXiv preprint arXiv:2410.17241},
-      year={2024}
+      journal={Machine Intelligence Research},
+      volume={},
+      number={},
+      pages={},
+      year={2025},
+      publisher={Springer}
     }
    ```
 
