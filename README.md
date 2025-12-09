@@ -34,7 +34,7 @@ Colonoscopy is currently one of the most sensitive screening methods for colorec
 
 ## Updates
 
-- *[Dec/09/2025]* 🔥🔥🔥 Thrilled to announce the largest multimodal colonoscopy dataset (1.1M+ VQA entries), along with reasoning-centric solutions: ColonReason dataset and the first reasoning-based model, ColonR1. Project is here: https://github.com/ai4colonoscopy/Colon-X.
+- *[Dec/09/2025]* 🔥🔥🔥 Thrilled to announce the largest multimodal colonoscopy dataset, **ColonVQA**, with 1.1M+ VQA entries. We also propose the first reasoning-centric solutions: **ColonReason** dataset and the first reasoning-based model, **ColonR1**. Project is here: https://github.com/ai4colonoscopy/Colon-X. Your 🌟star is our biggest motivation to move forward.
 - *[April/05/2025]* Our project now supports the Chinese AI platform [wisemodel](https://wisemodel.cn/codes/Jingyi/IntelliScope).
 - *[Feb/07/2025]* We announce a new two-stage training strategy for enhancing ColonGPT's performance, achieving SOTA results on all downstream tasks. Further details are available in our [technical report (arXiv-v2)](https://arxiv.org/abs/2410.17241v2).
 - *[Oct/30/2024]* We've set up an online benchmark on the [paper-with-code](https://paperswithcode.com/dataset/coloninst-v1) website.
