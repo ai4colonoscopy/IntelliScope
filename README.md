@@ -4,7 +4,7 @@
 
 <div align="center">
     <p align="center">
-        🔬 <b>Paper</b> (🔗 <a href="https://arxiv.org/abs/2410.17241">arXiv</a>, 🤗 <a href="https://huggingface.co/papers/2410.17241">Huggingface</a>, 🤖 <a href="https://www.aimodels.fyi/papers/arxiv/frontiers-intelligent-colonoscopy">AIModels.fyi</a>  | 
+        🔬 <b>Paper</b> (🔗 <a href="https://arxiv.org/abs/2410.17241">arXiv</a>, 🔗 <a href="https://link.springer.com/article/10.1007/s11633-025-1597-6">Springer</a>, 🤗 <a href="https://huggingface.co/papers/2410.17241">Huggingface</a>, 🤖 <a href="https://www.aimodels.fyi/papers/arxiv/frontiers-intelligent-colonoscopy">AIModels.fyi</a>  | 
         📖 <b>ColonSurvey</b> (🔗 <a href="https://docs.google.com/spreadsheets/d/1V_s99Jv9syzM6FPQAJVQqOFm5aqclmrYzNElY6BI18I/edit?usp=sharing">Online Sheet</a>) |
         🏥 <b>ColonINST</b> (🔗 <a href="https://drive.google.com/drive/folders/1ng2DQav-Gfts6hIr3_vCUC-a2gCWzzCO?usp=sharing">Google Drive</a>, 🤗 <a href="https://huggingface.co/datasets/ai4colonoscopy/ColonINST-v1">Huggingface</a>, <img src="./assets/wisemodel.png" style="width:40px"> <a href="https://wisemodel.cn/datasets/Jingyi/ColonINST">wisemodel</a>) | 
         🤖 <b>ColonGPT</b> (🔗 <a href="https://drive.google.com/drive/folders/1Emi7o7DpN0zlCPIYqsCfNMr9LTPt3SCT?usp=drive_link">Google Drive</a>, 🤗 <a href="https://huggingface.co/ai4colonoscopy/ColonGPT">Huggingface</a>, <img src="./assets/wisemodel.png" style="width:40px"> <a href="https://wisemodel.cn/models/Jingyi/ColonGPT">wisemodel</a>) |
