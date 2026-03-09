@@ -34,8 +34,8 @@ Colonoscopy is currently one of the most sensitive screening methods for colorec
 
 ## Updates
 
-- *[Mar/09/2026]* We provide the [translated version (CN) of the paper](./docs/MIR2026 - Frontiers of Intelligent Colonoscopy (Translation-CN).pdf) for the convenience of Chinese readers, enabling a broader audience to better understand the methodology, experimental results, and key contributions presented in this work.
-- *[Jan/07/2026]* Our paper has officially available at Springer Nature, please read our paper with this [link](https://link.springer.com/article/10.1007/s11633-025-1597-6), and cite our paper using this bibtex
+- *[Mar/09/2026]* We provide the [translated version](./docs/[2026][MIR]lntelliScope_Chinese.pdf) (CN) of the paper for the convenience of Chinese readers, enabling a broader audience to better understand the methodology, experimental results, and key contributions presented in this work.
+- *[Jan/07/2026]* Our paper has officially available at Springer Nature, please read our paper with this [link](https://link.springer.com/article/10.1007/s11633-025-1597-6), and cite our paper using this [bibtex](https://github.com/ai4colonoscopy/IntelliScope?tab=readme-ov-file#-citation).
 - *[Dec/09/2025]* 🔥🔥🔥 Thrilled to announce the largest multimodal colonoscopy dataset, **ColonVQA**, with 1.1M+ VQA entries. We also propose the first reasoning-centric solutions: **ColonReason** dataset and the first reasoning-based model, **ColonR1**. Project is here: https://github.com/ai4colonoscopy/Colon-X. Your 🌟star is our biggest motivation to move forward.
 - *[April/05/2025]* Our project now supports the Chinese AI platform [wisemodel](https://wisemodel.cn/codes/Jingyi/IntelliScope).
 - *[Feb/07/2025]* We announce a new two-stage training strategy for enhancing ColonGPT's performance, achieving SOTA results on all downstream tasks. Further details are available in our [technical report (arXiv-v2)](https://arxiv.org/abs/2410.17241v2).
